@@ -31,6 +31,8 @@ exports.get = (ext) => {
             return "application/octet-stream"
         case "bz":
             return "application/x-bzip"
+        case "bz2":
+            return "application/x-bzip2"
 
         //IMAGES
         case "png":
