@@ -1,18 +1,18 @@
-# headersfromextension
+# mimetype-extension
 Javascript module to retrieve the header of a file from its extension (for example for node)
 
 ## Installation
-`npm install --save headersfromextensions`
+`npm install --save mimetype-extension`
   
 In your node js application:
 
-`var headers = require("headersfromextensions")`
+`var mime_ext = require('mimetype-extension')`
   
 ## Utilisation
-`headers.get("png") return "image/png"`
+`mime_ext.get("png") return "image/png"`
 
-`headers.get("ttf") return "application/x-font-ttf"`
+`mime_ext.get("ttf") return "application/x-font-ttf"`
   
 So you can do :
 
-`res.setHeader('Content-Type', headers.get("js"))`
+`res.setHeader('Content-Type', mime_ext.get("js"))`
