@@ -41,6 +41,8 @@ exports.get = (ext) => {
             return "audio/mpeg"
         case "wav":
             return "audio/wav"
+        case "aac":
+            return "audio/aac"
 
         //VIDEOS
         case "mp4":
