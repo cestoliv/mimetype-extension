@@ -17,6 +17,8 @@ exports.get = (ext) => {
             return 'application/javascript'
         case "json":
             return "application/json"
+        case "md":
+            return "text/markdown"
 
         //IMAGES
         case "png":
