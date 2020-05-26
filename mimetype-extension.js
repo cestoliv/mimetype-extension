@@ -23,6 +23,8 @@ exports.get = (ext) => {
             return "application/x-abiword"
         case "azw":
             return "application/vnd.amazon.ebook"
+        case "bin":
+            return "application/octet-stream"
 
         //ARCHIVES
         case "arc":
