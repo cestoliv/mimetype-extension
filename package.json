@@ -1,6 +1,6 @@
 {
   "name": "mimetype-extension",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Javascript module to retrieve the header of a file from its extension (for example for node)",
   "author": "cestoliv",
   "main": "mimetype-extension.js",
