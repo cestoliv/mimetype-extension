@@ -22,6 +22,10 @@ exports.get = (ext) => {
         case "abw":
             return "application/x-abiword"
 
+        //ARCHIVES
+        case "arc":
+            return "application/octet-stream"
+
         //IMAGES
         case "png":
             return 'image/png'
@@ -59,6 +63,8 @@ exports.get = (ext) => {
             return "video/ogg"
         case "video-webm":
             return "video/webm"
+        case "avi":
+            return "video/x-msvideo"
 
         //FONTS
         case "ttf":
