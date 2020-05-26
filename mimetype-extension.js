@@ -29,6 +29,8 @@ exports.get = (ext) => {
         //ARCHIVES
         case "arc":
             return "application/octet-stream"
+        case "bz":
+            return "application/x-bzip"
 
         //IMAGES
         case "png":
