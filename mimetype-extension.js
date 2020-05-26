@@ -21,6 +21,8 @@ exports.get = (ext) => {
             return "text/markdown"
         case "abw":
             return "application/x-abiword"
+        case "azw":
+            return "application/vnd.amazon.ebook"
 
         //ARCHIVES
         case "arc":
