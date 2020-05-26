@@ -19,6 +19,8 @@ exports.get = (ext) => {
             return "application/json"
         case "md":
             return "text/markdown"
+        case "abw":
+            return "application/x-abiword"
 
         //IMAGES
         case "png":
