@@ -1,161 +1,118 @@
-exports.get = (ext) => {
-    switch(ext) {
-        //FILES
-        case "html":
-            return 'text/html'
-        case "htm":
-            return 'text/html'
-        case "xhtml":
-            return 'application/xhtml+xml'
-        case "xml":
-            return 'text/xml'
-        case "webmanifest":
-            return 'application/manifest+json'
-        case "txt":
-            return 'text/plain'
-        case "pdf":
-            return 'application/pdf'
-        case "css":
-            return 'text/css'
-        case "js":
-            return 'application/javascript'
-        case "json":
-            return "application/json"
-        case "md":
-            return "text/markdown"
-        case "abw":
-            return "application/x-abiword"
-        case "azw":
-            return "application/vnd.amazon.ebook"
-        case "bin":
-            return "application/octet-stream"
-        case "csh":
-            return "application/x-csh"
-        case "csv":
-            return "text/csv"
-        case "doc":
-            return "application/msword"
-        case "docx":
-            return "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-        case "epub":
-            return "application/epub+zip"
-        case "ics":
-            return "text/calendar"
-        case "mpkg":
-            return "application/vnd.apple.installer+xml"
-        case "odp":
-            return "application/vnd.oasis.opendocument.presentation"
-        case "ods":
-            return "application/vnd.oasis.opendocument.spreadsheet"
-        case "odt":
-            return "application/vnd.oasis.opendocument.text"
-        case "ogx":
-            return "application/ogg"
-        case "ppt":
-            return "application/vnd.ms-powerpoint"
-        case "pptx":
-            return "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-        case "rtf":
-            return "application/rtf"
-        case "sh":
-            return "application/x-sh"
-        case "swf":
-            return "application/x-shockwave-flash"
-        case "ts":
-            return "application/typescript"
-        case "vsd":
-            return "application/vnd.visio"
-        case "xls":
-            return "application/vnd.ms-excel"
-        case "xlsx":
-            return "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        case "xml":
-            return "application/xml"
-        case "xul":
-            return "application/vnd.mozilla.xul+xml"
+var types = [
+    // FILES
+    {ext: "html", type: "text/html"},
+    {ext: "htm", type: "text/html"},
+    {ext: "xhtml", type: "application/xhtml+xml"},
+    {ext: "xml", type: "text/xml"},
+    {ext: "webmanifest", type: "application/manifest+json"},
+    {ext: "txt", type: "text/plain"},
+    {ext: "pdf", type: "application/pdf"},
+    {ext: "css", type: "text/css"},
+    {ext: "js", type: "application/javascript"},
+    {ext: "json", type: "application/json"},
+    {ext: "md", type: "text/markdown"},
+    {ext: "abw", type: "application/x-abiword"},
+    {ext: "azw", type: "application/vnd.amazon.ebook"},
+    {ext: "bin", type: "application/octet-stream"},
+    {ext: "csh", type: "application/x-csh"},
+    {ext: "csv", type: "text/csv"},
+    {ext: "doc", type: "application/msword"},
+    {ext: "docx", type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+    {ext: "epub", type: "application/epub+zip"},
+    {ext: "ics", type: "text/calendar"},
+    {ext: "mpkg", type: "application/vnd.apple.installer+xml"},
+    {ext: "odp", type: "application/vnd.oasis.opendocument.presentation"},
+    {ext: "ods", type: "application/vnd.oasis.opendocument.spreadsheet"},
+    {ext: "odt", type: "application/vnd.oasis.opendocument.text"},
+    {ext: "ogx", type: "application/ogg"},
+    {ext: "ppt", type: "application/vnd.ms-powerpoint"},
+    {ext: "pptx", type: "application/vnd.openxmlformats-officedocument.presentationml.presentation"},
+    {ext: "rtf", type: "application/rtf"},
+    {ext: "sh", type: "application/x-sh"},
+    {ext: "swf", type: "application/x-shockwave-flash"},
+    {ext: "ts", type: "application/typescript"},
+    {ext: "vsd", type: "application/vnd.visio"},
+    {ext: "xls", type: "application/vnd.ms-excel"},
+    {ext: "xlsx", type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+    {ext: "xul", type: "application/vnd.mozilla.xul+xml"},
 
-        //ARCHIVES
-        case "arc":
-            return "application/octet-stream"
-        case "bz":
-            return "application/x-bzip"
-        case "bz2":
-            return "application/x-bzip2"
-        case "jar":
-            return "application/java-archive"
-        case "rar":
-            return "application/x-rar-compressed"
-        case "tar":
-            return "application/x-tar"
-        case "zip":
-            return "application/zip"
-        case "7z":
-            return "application/x-7z-compressed"
+    // ARCHIVES
+    {ext: "arc", type: "application/octet-stream"},
+    {ext: "bz", type: "application/x-bzip"},
+    {ext: "bz2", type: "application/x-bzip2"},
+    {ext: "jar", type: "application/java-archive"},
+    {ext: "rar", type: "application/x-rar-compressed"},
+    {ext: "tar", type: "application/x-tar"},
+    {ext: "zip", type: "application/zip"},
+    {ext: "7z", type: "application/x-7z-compressed"},
 
-        //IMAGES
-        case "png":
-            return 'image/png'
-        case "svg":
-            return 'image/svg+xml'
-        case "ico":
-            return 'image/x-icon'
-        case "jpg":
-            return "image/jpeg"
-        case "jpeg":
-            return "image/jpeg"
-        case "gif":
-            return "image/gif"
-        case "tif":
-            return "image/tiff"
-        case "tiff":
-            return "image/tiff"
-        case "webp":
-            return "image/webp"
+    // IMAGES
+    {ext: "png", type: "image/png"},
+    {ext: "svg", type: "image/svg+xml"},
+    {ext: "ico", type: "image/x-icon"},
+    {ext: "jpg", type: "image/jpeg"},
+    {ext: "jpeg", type: "image/jpeg"},
+    {ext: "gif", type: "image/gif"},
+    {ext: "tif", type: "image/tiff"},
+    {ext: "tiff", type: "image/tiff"},
+    {ext: "webp", type: "image/webp"},
 
-        //AUDIOS
-        case "oga":
-            return "audio/ogg"
-        case "weba":
-            return "audio/webm"
-        case "mp3":
-            return "audio/mpeg"
-        case "wav":
-            return "audio/wav"
-        case "aac":
-            return "audio/aac"
-        case "midi":
-            return "audio/midi"
-        case "mid":
-            return "audio/midi"
+    // AUDIOS
+    {ext: "oga", type: "audio/ogg"},
+    {ext: "weba", type: "audio/webm"},
+    {ext: "mp3", type: "audio/mpeg"},
+    {ext: "wav", type: "audio/wav"},
+    {ext: "aac", type: "audio/aac"},
+    {ext: "midi", type: "audio/midi"},
+    {ext: "mid", type: "audio/midi"},
 
-        //VIDEOS
-        case "mp4":
-            return "video/mp4"
-        case "ogg":
-            return "video/ogg"
-        case "ogv":
-            return "video/ogg"
-        case "webm":
-            return "video/webm"
-        case "avi":
-            return "video/x-msvideo"
-        case "mpeg":
-            return "video/mpeg"
+    // VIDEOS
+    {ext: "mp4", type: "video/mp4"},
+    {ext: "ogg", type: "video/ogg"},
+    {ext: "ogv", type: "video/ogg"},
+    {ext: "webm", type: "video/webm"},
+    {ext: "avi", type: "video/x-msvideo"},
+    {ext: "mpeg", type: "video/mpeg"},
 
-        //FONTS
-        case "ttf":
-            return 'application/x-font-ttf'
-        case "woff2":
-            return 'application/font-woff2'
-        case "eot":
-            return 'application/vnd.ms-fontobject'
-        case "woff":
-            return 'application/font-woff'
-        case "otf":
-            return 'font/otf'
+    // FONTS
+    {ext: "ttf", type: "application/x-font-ttf"},
+    {ext: "woff2", type: "application/x-font-ttf"},
+    {ext: "eot", type: "application/vnd.ms-fontobject"},
+    {ext: "woff", type: "application/font-woff"},
+    {ext: "oft", type: "font/otf"},
+]
 
-        //OTHER
-        default:
-            return "application/octet-stream"
+var default_type = "application/octet-stream"
+var defalut_ext = "bin"
+
+exports.type = (ext_wanted) => {
+    let founded = ""
+    for(i = 0; i < types.length; i++) {
+        if(types[i]["ext"] == ext_wanted) {
+            founded = types[i]["type"]
+            break
+        }
     }
+
+    if(!founded || founded == "") {
+        founded = default_type
+    }
+
+    return founded
+}
+
+exports.ext = (type_wanted) => {
+    let founded = ""
+    for(i = 0; i < types.length; i++) {
+        if(types[i]["type"] == type_wanted) {
+            founded = types[i]["ext"]
+            break
+        }
+    }
+
+    if(!founded || founded == "") {
+        founded = defalut_ext
+    }
+
+    return founded
 }

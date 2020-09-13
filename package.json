@@ -1,7 +1,7 @@
 {
   "name": "mimetype-extension",
-  "version": "0.0.3",
-  "description": "Javascript module to retrieve the header of a file from its extension (for example for node)",
+  "version": "0.0.4",
+  "description": "NPM module to find the mime type of a file from an extension, and the extension of a file from a mime type",
   "author": "cestoliv",
   "main": "mimetype-extension.js",
   "repository": {
